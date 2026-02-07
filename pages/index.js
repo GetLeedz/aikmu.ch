@@ -6,10 +6,10 @@ const Home = () => (
   <div>
     <Head>
       {/* ================= BASIC SEO ================= */}
-      <title>GetLeedz · More Leads für Schweizer KMUs</title>
+      <title>AiKMU · More Leads für Schweizer KMUs</title>
       <meta
         name="description"
-        content="GetLeedz entwickelt starke Creatives und Performance-Kampagnen auf Meta, LinkedIn und Google für messbar neue Anfragen."
+        content="AiKMU entwickelt starke Creatives und Performance-Kampagnen auf Meta, LinkedIn und Google für messbar neue Anfragen."
       />
       <link rel="icon" href="/favicon.ico" />
 
