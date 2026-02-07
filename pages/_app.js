@@ -5,18 +5,19 @@ import { useRouter } from "next/router";
 import CookieBanner from "../components/cookie/CookieBanner";
 import { initFacebookPixel, track } from "../components/lib/fbpixel";
 import { hasMarketingConsent } from "../components/lib/consent";
+import Header from "../components/header/Header";
+import Footer from "../components/footer/Footer";
+
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
   useEffect(() => {
-    // 🔐 Initialisierung nur bei Marketing-Consent
     if (hasMarketingConsent()) {
       initFacebookPixel();
       track("PageView");
     }
 
-    // 🔁 PageView bei echten Seitenwechseln
     const handleRouteChange = () => {
       if (hasMarketingConsent()) {
         track("PageView");
@@ -32,12 +33,15 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      {/* 🔒 App Root – KEINE CSS-Transforms, KEINE Filter */}
-      <div id="app-root">
-        <Component {...pageProps} />
-      </div>
+      {/* 🔒 App Root */}
+<div id="app-root">
+  <Header />
+  <Component {...pageProps} />
+  <Footer />
+</div>
 
-      {/* 🔒 Fixed Layer – komplett entkoppelt */}
+
+      {/* 🔒 Fixed Layer */}
       <div id="fixed-layer">
         <CookieBanner />
       </div>
