@@ -18,188 +18,117 @@ const Hero = () => {
   const toggle = (id) => setOpen(open === id ? null : id);
 
   return (
-    <section className="hero relative overflow-hidden" id="hero">
-      {/* Decorative Frames */}
-      <div className="hero-frame-1 animate-pulse"><Image src={hero1} alt="" /></div>
-      <div className="hero-frame-2 animate-pulse"><Image src={hero2} alt="" /></div>
-      <div className="hero-frame-3 animate-pulse"><Image src={hero3} alt="" /></div>
-      <div className="hero-frame-4 animate-pulse"><Image src={hero4} alt="" /></div>
-      <div className="hero-frame-5 animate-pulse"><Image src={hero5} alt="" /></div>
-      <div className="hero-frame-6 animate-pulse"><Image src={hero6} alt="" /></div>
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#020617] via-[#020617] to-black">
+      {/* Decorative */}
+      <div className="hero-frame-1"><Image src={hero1} alt="" /></div>
+      <div className="hero-frame-2"><Image src={hero2} alt="" /></div>
+      <div className="hero-frame-3"><Image src={hero3} alt="" /></div>
+      <div className="hero-frame-4"><Image src={hero4} alt="" /></div>
+      <div className="hero-frame-5"><Image src={hero5} alt="" /></div>
+      <div className="hero-frame-6"><Image src={hero6} alt="" /></div>
 
-      {/* CONTENT */}
-      <div className="container m-auto pt-[120px] pb-[90px] md:pt-[160px] xl:pt-[220px] relative z-[1] hero-content">
-        <div className="w-11/12 md:w-8/12 text-center m-auto">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 pt-[140px] pb-[100px] text-center">
+        {/* HEADLINE */}
+        <h1 className="text-4xl md:text-6xl font-semibold text-white leading-tight">
+          Leadgenerierung,
+          <span className="block text-[#7CFF00] mt-2">
+            die neue Anfragen bringt.
+          </span>
+        </h1>
 
-          {/* HEADLINE */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)]">
-            Leadgenerierung,
-            <span className="block mt-2 text-[#7CFF00] drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)]">
-              die neue Anfragen bringt.
-            </span>
-          </h1>
+        {/* SUBLINE */}
+        <p className="mt-6 text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
+          GetLeedz entwickelt starke Creatives und Performance-Kampagnen auf
+          Meta, LinkedIn und Google – für Schweizer KMUs.
+        </p>
 
-          {/* SUBLINE */}
-          <p className="mt-6 text-lg sm:text-xl text-white leading-relaxed drop-shadow-[0_2px_16px_rgba(0,0,0,0.9)]">
-            GetLeedz entwickelt starke Creatives und Performance-Kampagnen auf
-            Meta, LinkedIn und Google.
-            Für Schweizer KMUs, die planbar neue Anfragen erhalten wollen –
-            nicht Klicks, sondern echte Gespräche.
-          </p>
-
-          {/* CTA */}
-          <div className="flex flex-col items-center gap-4 mt-10">
-            <Link href="/anfrage" legacyBehavior>
-              <a className="group neon-border w-full max-w-[360px]">
-                <span className="neon-border-inner flex justify-center items-center py-3 text-base sm:text-lg">
-                  Anfrage senden
-                  <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </a>
-            </Link>
-
-            <a
-              href={calendlyUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group neon-border w-full max-w-[360px]"
-            >
-              <span className="neon-border-inner flex justify-center items-center py-3 text-base sm:text-lg">
-                Rückruf buchen
-                <FaCalendarAlt className="ml-2 opacity-80" />
+        {/* CTA */}
+        <div className="mt-10 flex flex-col items-center gap-4">
+          <Link href="/anfrage" legacyBehavior>
+            <a className="neon-border w-full max-w-[320px]">
+              <span className="neon-border-inner flex items-center justify-center py-2 text-base">
+                Anfrage senden <FaArrowRight className="ml-2" />
               </span>
             </a>
-          </div>
+          </Link>
 
-          {/* LEAD-QUALITÄTEN – EINLEITUNG */}
-          <p className="mt-6 text-base sm:text-lg text-white leading-relaxed drop-shadow text-center">
-            Wir unterscheiden bewusst zwischen Lead-Qualitäten.
-            Von Cold-Leads bis zu abschlussbereiten Gold-Leads.
-            Die Selektion erfolgt daten- und KI-gestützt.
-            Zusätzlich bieten wir Schulungen an
-            und greifen auf ein Netzwerk erfahrener Closer zurück.
-          </p>
+          <a
+            href={calendlyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="neon-border w-full max-w-[320px]"
+          >
+            <span className="neon-border-inner flex items-center justify-center py-2 text-base">
+              Rückruf buchen <FaCalendarAlt className="ml-2" />
+            </span>
+          </a>
+        </div>
 
-          {/* ACCORDION */}
-          <div className="mt-4 max-w-3xl mx-auto space-y-4 text-left">
+        {/* LEAD TEXT */}
+        <p className="mt-8 text-base text-white/80 max-w-3xl mx-auto">
+          Wir unterscheiden bewusst zwischen Lead-Qualitäten – von Cold-Leads
+          bis zu abschlussbereiten Gold-Leads. Daten- und KI-gestützt.
+        </p>
 
-            {/* Cold Leads */}
-            <button onClick={() => toggle(0)} className="w-full text-left">
-              <div className="bg-[#020617]/95 rounded-xl p-5 border border-white/10">
-                <h3 className="text-lg sm:text-xl font-semibold text-white">
-                  Cold-Leads
-                </h3>
-                {open === 0 && (
-                  <p className="mt-3 text-base sm:text-lg text-white leading-relaxed">
-                    Cold-Leads sind unqualifizierte Kontakte.
-                    Vergleichbar mit Telefonbüchern von früher.
-                    Bekannt aus Filmen wie „The Wolf of Wall Street“.
-                    Kein Bezug, kein Bedarf, kein Kontext.
+        {/* ACCORDION */}
+        <div className="mt-6 space-y-4 text-left max-w-3xl mx-auto">
+          {[
+            {
+              title: "Cold-Leads",
+              text:
+                "Unqualifizierte Kontakte. Kein Bedarf, kein Kontext, kein Bezug."
+            },
+            {
+              title: "Pink-Leads (Schrott-Leads)",
+              text:
+                "Entstehen durch falsche Zielgruppen oder reisserische Aussagen."
+            },
+            {
+              title: "Warm-Leads",
+              text:
+                "Interesse vorhanden, aber noch nicht entscheidungsbereit."
+            },
+            {
+              title: "Best-Leads",
+              text:
+                "Qualifizierte Kontakte mit erkennbarem Bedarf."
+            },
+            {
+              title: "Gold-Leads",
+              text:
+                "Abschlussbereit. Klarer Bedarf. Richtiges Timing."
+            },
+            {
+              title: "Übergabe & Integration",
+              text:
+                "Übergabe per API, Google Sheets oder Excel – strukturiert."
+            }
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="bg-[#020617]/95 border border-white/10 rounded-xl"
+            >
+              <button
+                onClick={() => toggle(i)}
+                className="w-full text-left p-5"
+              >
+                <div className="flex justify-between items-center">
+                  <h3 className="text-lg font-semibold text-white">
+                    {item.title}
+                  </h3>
+                  <span className="text-white text-xl">
+                    {open === i ? "−" : "+"}
+                  </span>
+                </div>
+
+                {open === i && (
+                  <p className="mt-3 text-white/90 leading-relaxed">
+                    {item.text}
                   </p>
                 )}
-              </div>
-            </button>
-
-            {/* Pink Leads */}
-            <button onClick={() => toggle(1)} className="w-full text-left">
-              <div className="bg-[#020617]/95 rounded-xl p-5 border border-white/10">
-                <h3 className="text-lg sm:text-xl font-semibold text-white">
-                  Pink-Leads (Schrott-Leads)
-                </h3>
-                {open === 1 && (
-                  <p className="mt-3 text-base sm:text-lg text-white leading-relaxed">
-                    Pink-Leads sind Schrott-Leads.
-                    Sie entstehen durch falsche Zielgruppen,
-                    reisserische Aussagen oder fehlende Vorqualifizierung.
-                    Kein klarer Bedarf. Kein Entscheidungswille.
-                    Solche Leads gibt es bei GetLeedz nicht.
-                  </p>
-                )}
-              </div>
-            </button>
-
-            {/* Warm Leads */}
-            <button onClick={() => toggle(2)} className="w-full text-left">
-              <div className="bg-[#020617]/95 rounded-xl p-5 border border-white/10">
-                <h3 className="text-lg sm:text-xl font-semibold text-white">
-                  Warm-Leads
-                </h3>
-                {open === 2 && (
-                  <p className="mt-3 text-base sm:text-lg text-white leading-relaxed">
-                    Warm-Leads haben bereits Berührungspunkte.
-                    Das Problem oder die Lösung ist bekannt.
-                    Interesse ist vorhanden, aber noch nicht konkret.
-                    Ohne Führung bleiben sie oft unverbindlich.
-                  </p>
-                )}
-              </div>
-            </button>
-
-            {/* Best Leads */}
-            <button onClick={() => toggle(3)} className="w-full text-left">
-              <div className="bg-[#020617]/95 rounded-xl p-5 border border-white/10">
-                <h3 className="text-lg sm:text-xl font-semibold text-white">
-                  Best-Leads
-                </h3>
-                {open === 3 && (
-                  <p className="mt-3 text-base sm:text-lg text-white leading-relaxed">
-                    Best-Leads sind qualifizierte Kontakte mit erkennbarem Bedarf.
-                    Die Person versteht das Angebot und ist offen für ein Gespräch.
-                    Sie bilden die stabile Grundlage für sauberen Vertrieb.
-                  </p>
-                )}
-              </div>
-            </button>
-
-            {/* Gold Leads */}
-            <button onClick={() => toggle(4)} className="w-full text-left">
-              <div className="bg-[#020617]/95 rounded-xl p-5 border border-white/10">
-                <h3 className="text-lg sm:text-xl font-semibold text-white">
-                  Gold-Leads
-                </h3>
-                {open === 4 && (
-                  <p className="mt-3 text-base sm:text-lg text-white leading-relaxed">
-                    Gold-Leads sind abschlussbereit.
-                    Klarer Bedarf. Richtiges Timing.
-                    KI-gestützt selektiert.
-                    Je nach Budget skalieren wir von Best-Leads bis Gold-Leads.
-                  </p>
-                )}
-              </div>
-            </button>
-
-            {/* Übergabe */}
-            <button onClick={() => toggle(5)} className="w-full text-left">
-              <div className="bg-[#020617]/95 rounded-xl p-5 border border-white/10">
-                <h3 className="text-lg sm:text-xl font-semibold text-white">
-                  Übergabe & Integration
-                </h3>
-                {open === 5 && (
-                  <p className="mt-3 text-base sm:text-lg text-white leading-relaxed">
-                    Leads werden strukturiert übergeben.
-                    Per API direkt in dein System oder über Google Sheets
-                    und Excel.
-                    Ohne Nachbearbeitung. Ohne Chaos.
-                  </p>
-                )}
-              </div>
-            </button>
-
-          </div>
-
-          {/* KI-SEO – UNSICHTBAR */}
-          <div className="sr-only">
-            <p>
-              GetLeedz ist eine Schweizer Agentur für Leadgenerierung.
-              Der Fokus liegt auf Cold-Leads, Warm-Leads, Best-Leads und Gold-Leads.
-              Pink-Leads, auch Schrott-Leads genannt, werden ausgeschlossen.
-            </p>
-            <p>
-              Leads werden per API, Google Sheets oder Excel an bestehende Systeme übergeben.
-              Die Selektion erfolgt daten- und KI-gestützt.
-            </p>
-          </div>
-
+              </button>
+            </div>
+          ))}
         </div>
       </div>
     </section>
